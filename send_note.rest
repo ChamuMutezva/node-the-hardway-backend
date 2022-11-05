@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/notes/
+Content-Type: application/json
+
+{
+    "id": 4,
+    "content": "Creating notes with mongoose",
+    "date": "2022-11-03T04:25",
+    "important": true
+}
