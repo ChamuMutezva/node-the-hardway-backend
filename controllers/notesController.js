@@ -1,12 +1,9 @@
 const noteModel = require('../models/noteModel')
 const mongoose = require('mongoose')
-const { response } = require('express')
+// const { response } = require('express')
 
 // create a new note
-const createNewNote = async (request, response) => {
-    //const note = request.body
-    // console.log(note)
-    // response.json(note)
+const createNewNote = async (request, response) => {    
     const { id, content, date, important } = request.body
     console.log(request.body)
     try {
