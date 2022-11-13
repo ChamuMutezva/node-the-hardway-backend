@@ -12,9 +12,13 @@ app.use(express.static("dist"))
 // connect to database
 console.log(process.env.MONGO_URI)
 const PORT = process.env.PORT || 3001
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {   
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+})
     .then(() => {
-        app.use(notesRouter)       
+        app.use(notesRouter)
         app.listen(PORT)
         console.log("Connected to the database")
         console.log(`Server running on port ${PORT}`)
