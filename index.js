@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config() 
 const { response } = require('express')
 const mongoose = require('mongoose')
 const express = require('express')
@@ -10,9 +10,9 @@ app.use(cors())
 app.use(express.static("dist"))
 
 // connect to database
-console.log(typeof process.env.MONGO_URI)
+console.log(process.env)
 const PORT = process.env.PORT || 3001
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         app.use(notesRouter)
         app.listen(PORT)
